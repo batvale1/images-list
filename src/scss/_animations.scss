@@ -1,0 +1,47 @@
+.fade-enter-active, .fade-leave-active {
+  transition: opacity $animation-duration;
+}
+
+.fade-enter, .fade-leave-to {
+  opacity: 0;
+}
+
+.slide-enter {
+  opacity: 0;
+}
+
+.slide-enter-active {
+  animation: slide-in $animation-duration ease-out forwards;
+  transition: opacity $animation-duration;
+}
+
+.slide-leave-active {
+  animation: slide-out $animation-duration ease-out forwards;
+  transition: opacity $animation-duration;
+  opacity: 0;
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+
+.slide-move {
+  transition: transform $animation-duration;
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateY(20px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-out {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(20px);
+  }
+}
